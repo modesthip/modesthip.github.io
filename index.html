@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Self Introduction</title>
-</head>
-<body>
-<h1>Hello, I'm <span id="name"></span></h1>
-<p>I am a <span id="profession"></span>.</p>
-<p>I have a passion for <span id="passion"></span>.</p>
-<p>In my free time, I enjoy <span id="hobbies"></span>.</p>
+---
+layout: default
+title: Home
+---
 
-<script>
-  document.getElementById("name").innerHTML = "Dash";
-  document.getElementById("profession").innerHTML = "CS student"
-  document.getElementById("passion").innerHTML = "delve deeper into the world of programming";
-  document.getElementById("hobbies").innerHTML = "listening music or working on my projects";
-</script>
-</body>
-</html>
+<h1>Welcome to my Jekyll website!</h1>
+<p>This is a sample homepage.</p>
+
+<h2>Latest blog post</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
+
+---
+layout: post
+title: My First Blog Post
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>This is my first blog post.</p>
+
+<p>I am excited to start sharing my thoughts and experiences on this website.</p>
